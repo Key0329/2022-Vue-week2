@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HexSchool Vue week 2 - login</title>
+    <link rel="stylesheet" href="../dist/style/output.css" />
+  </head>
+
+  <body>
+    <main class="flex items-center justify-center h-screen text-center">
+      <div id="app">
+        <div class="container">
+          <h1 class="mb-4 text-3xl">請先登入</h1>
+          <form id="form" class="p-4" @submit.prevent="login">
+            <div class="relative mb-3">
+              <input
+                type="email"
+                class="block px-3 pt-6 pb-2 bg-transparent rounded-lg peer focus:border-blue-400 border-slate-200 focus:ring-blue-200 focus:ring-5 focus:ring-offset-4 focus:ring-offset-blue-200 focus:outline-none"
+                id="username"
+                v-model="user.username"
+                placeholder=" "
+                required
+                autofocus
+              />
+              <label
+                class="absolute left-2.5 z-10 text-lg duration-300 scale-75 top-4 origin-[0] -translate-y-4 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:scale-100 peer-focus:text-slate-400 peer-focus:scale-75 peer-focus:-translate-y-4"
+                for="username"
+                >Email address</label
+              >
+            </div>
+
+            <div class="relative">
+              <input
+                type="password"
+                class="px-3 pt-6 pb-2 rounded-lg peer focus:border-blue-400 border-slate-200 focus:ring-blue-200 focus:ring-5 focus:ring-offset-4 focus:ring-offset-blue-200 focus:outline-none"
+                id="password"
+                v-model="user.password"
+                placeholder=" "
+                required
+              />
+              <label
+                class="absolute text-lg duration-300 top-4 left-2.5 -translate-y-4 origin-[0] scale-75 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:scale-100 peer-focus:text-slate-400 peer-focus:scale-75 peer-focus:-translate-y-4"
+                for="password"
+                >Password</label
+              >
+            </div>
+            <button
+              class="w-full px-4 py-2 mt-4 text-xl text-white bg-blue-500 rounded-lg hover:bg-blue-600"
+              type="submit"
+            >
+              登入
+            </button>
+          </form>
+          <p class="mt-5 mb-3 text-muted">&copy; 2021~∞ - 六角學院</p>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.9.1/axios.min.js"
+      integrity="sha512-Xk3wWei2TGrsh9kDSBKUMIjw/86sLUvhtnv9f7fOuIwhhiUTKz8szkWkzHthrM5Bb3Bu9idSzkxOrkzhcneuiw=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+      integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/login.js"></script>
+  </body>
+</html>
